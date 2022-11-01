@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "271881048397",
+    "project_id": "bd-rachelplas",
+    "storage_bucket": "bd-rachelplas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271881048397:android:54a1677021123c072ce704",
+        "android_client_info": {
+          "package_name": "com.untels.rachelplas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271881048397-st5qp0kko88ino3dq5sp2j77ajd2r8j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsyfGgWFhykFGKW6JKOt3cQlH_D_NB0UQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271881048397-st5qp0kko88ino3dq5sp2j77ajd2r8j8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
