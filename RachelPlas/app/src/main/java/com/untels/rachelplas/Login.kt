@@ -35,6 +35,12 @@ class Login : AppCompatActivity() {
                 }
             }
         }
+
+        // Ir a la pantalla de registro de nuevo usuario
+        binding.Registar.setOnClickListener {
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
+        }
     }
 
     //Verificar si la sesion ya esta inicializada

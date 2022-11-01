@@ -1,5 +1,6 @@
 package com.untels.rachelplas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
 
+        //CerrarSesion()
     }
+
+    //cerrar sesion
+
+    //private fun CerrarSesion() {
+        //Firebase.auth.signOut()
+        //val intent = Intent(this, Login::class.java)
+        //startActivity(intent)
+    //}
 
 }
