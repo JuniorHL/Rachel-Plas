@@ -55,19 +55,37 @@ class Register : AppCompatActivity() {
         }
     }
 
-    //funcion crear cuenta nueva
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            if(currentUser.isEmailVerified){
+                val intent = Intent(this, MainActivity::class.java)
+                this.startActivity(intent)
+            } else {
+                val intent = Intent(this, VerificarCorreo::class.java)
+                this.startActivity(intent)
+            }
+        }
+    }
 
+    //funcion crear cuenta nueva
     private fun CuentaNueva(email: String, password: String){
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    val intent = Intent(this, VerificarCorreo::class.java)
+                    this.startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w("TAG", "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(this, "No se pudo crear la cuenta. Vuelva a intertarlo",
                         Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun reload(){
+        //nos lleva a la pantalla productos
+        val intent = Intent(this, MainActivity::class.java)
+        this.startActivity(intent)
     }
 }

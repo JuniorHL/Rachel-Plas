@@ -21,15 +21,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
 
-        //CerrarSesion()
+        binding.button.setOnClickListener {
+            CerrarSesion()
+        }
+
     }
 
     //cerrar sesion
-
-    //private fun CerrarSesion() {
-        //Firebase.auth.signOut()
-        //val intent = Intent(this, Login::class.java)
-        //startActivity(intent)
-    //}
+    private fun CerrarSesion() {
+        Firebase.auth.signOut()
+        val intent = Intent(this, Login::class.java)
+        startActivity(intent)
+    }
 
 }

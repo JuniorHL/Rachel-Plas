@@ -41,6 +41,13 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
+
+        // Ir a la pantalla de cambiar contraseña
+        binding.RecupContra.setOnClickListener {
+            val intent = Intent(this, RecuperarCuenta::class.java)
+            startActivity(intent)
+        }
+
     }
 
     //Verificar si la sesion ya esta inicializada
@@ -48,7 +55,13 @@ class Login : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         if(currentUser != null){
-            reload();
+            if(currentUser.isEmailVerified){
+                val intent = Intent(this, MainActivity::class.java)
+                this.startActivity(intent)
+            } else {
+                val intent = Intent(this, VerificarCorreo::class.java)
+                this.startActivity(intent)
+            }
         }
     }
 
